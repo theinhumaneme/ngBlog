@@ -1,0 +1,10 @@
+.post-wrapper{
+    padding: 3rem;
+}
+.post-metadata{
+    padding-bottom: 2rem;
+}
+.author-image{
+    height: 100px;
+    width: 100px;
+}
