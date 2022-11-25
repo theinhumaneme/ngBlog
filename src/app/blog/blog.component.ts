@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
   posts: Post[] = [];
   postId: number;
   view: boolean;
-  singlePost:Post;
+  singlePost: Post;
   comments: Comment[];
 
   constructor(
@@ -30,7 +30,7 @@ export class BlogComponent implements OnInit {
     if (this.view) {
       // this.posts = this.postService.getPosts()
       this.singlePost = this.postService.getPost(this.postId);
-      if(this.singlePost.hasOwnProperty('comments')){
+      if (this.singlePost.hasOwnProperty('comments')) {
       }
     } else {
       this.posts = this.postService.getPosts();
@@ -42,9 +42,8 @@ export class BlogComponent implements OnInit {
     }
   }
   ngOnDestroy() {
-    if(!this.view){
+    if (!this.view) {
       this.postSubscription.unsubscribe();
     }
-    
   }
 }

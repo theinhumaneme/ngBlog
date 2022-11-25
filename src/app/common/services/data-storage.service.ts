@@ -49,31 +49,9 @@ export class dataStorageService {
       )
       .subscribe((logs) => {
         if (logs != null) {
+          // console.log(logs)
           this.loggingService.setLogs(logs);
         }
       });
   }
-  // storeLogs() {
-  //   const recipes = this.loggingService.getLogs();
-  //   this.http
-  //     .put(
-  //       'https://angular-http-demo-udemy-default-rtdb.asia-southeast1.firebasedatabase.app/logs.json',
-  //       recipes
-  //     )
-  //     .subscribe((response) => {
-  //       console.log(response);
-  //     });
-  // }
-  // fetchLogs() {
-  //   this.http
-  //     .get<Post[]>(
-  //       'https://angular-http-demo-udemy-default-rtdb.asia-southeast1.firebasedatabase.app/logs.json'
-  //     )
-  //     .subscribe((posts) => {
-  //       if(posts!=null){
-  //         this.postService.setPosts(posts);
-  //       }
-
-  //     });
-  // }
 }

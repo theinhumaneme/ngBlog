@@ -6,18 +6,19 @@ import { PostService } from '../../../common/services/post.service';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.css']
+  styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent implements OnInit {
-  @Input() comment:Comment;
+  @Input() comment: Comment;
   @Input() postId;
-  @Input() commentId:number;
-  constructor(private postService: PostService,  private dataStorageService:dataStorageService) { }
-  ngOnInit(): void {
+  @Input() commentId: number;
+  constructor(
+    private postService: PostService,
+    private dataStorageService: dataStorageService
+  ) {}
+  ngOnInit(): void {}
+  onDelete() {
+    this.postService.deleteComment(this.postId, this.commentId);
+    this.dataStorageService.storePosts();
   }
-  onDelete(){
-    this.postService.deleteComment(this.postId, this.commentId)
-    this.dataStorageService.storePosts()
-  }
-
 }

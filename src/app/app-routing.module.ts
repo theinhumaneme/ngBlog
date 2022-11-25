@@ -24,17 +24,17 @@ const routes: Routes = [
     component: PostEditComponent,
   },
   {
-    path: "view/:id/post",
-    component: BlogComponent
+    path: 'view/:id/post',
+    component: BlogComponent,
   },
   {
-    path:"edit/:postId/:commentId",
-    component: CommentEditComponent
+    path: 'edit/:postId/:commentId',
+    component: CommentEditComponent,
   },
   {
-    path:'logs',
-    component:LoggingComponent
-  }
+    path: 'logs',
+    component: LoggingComponent,
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

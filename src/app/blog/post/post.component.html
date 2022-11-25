@@ -5,14 +5,6 @@
         <mat-card-subtitle>{{post.datePosted | date:'MMMM d, y'}}</mat-card-subtitle>
         <mat-card-subtitle *ngIf="post.hasOwnProperty('comments')" >{{post.comments.length}} Comments</mat-card-subtitle>
         <mat-card-subtitle *ngIf="!post.hasOwnProperty('comments')" >0 Comments</mat-card-subtitle>
-        <mat-card-subtitle>
-            <mat-chip-list>
-                <mat-chip>hello</mat-chip>
-                <mat-chip>hi</mat-chip>
-                <mat-chip>bye</mat-chip>
-                <mat-chip>lmao</mat-chip>
-            </mat-chip-list>
-        </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <mat-card-title class="post-title" routerLink="/view/{{id}}/post" style="cursor: pointer;">{{post.title}}</mat-card-title>

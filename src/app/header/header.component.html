@@ -1,19 +1,13 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>dashboard</mat-icon>
-  </button>
-  <span>Angular Blog</span>
+  <span routerLink="blog">Angular Blog</span>
   <span class="example-spacer"></span>
   <button mat-mini-fab color="primary" class="header-icon" aria-label="Save Posts" (click)="onSave()">
     <mat-icon>save</mat-icon>
   </button>
-  <button mat-mini-fab color="primary" class="header-icon" aria-label="Add new Post">
-    <mat-icon>label</mat-icon>
-  </button>
   <button mat-mini-fab color="primary" class="header-icon" aria-label="Add new Post" routerLink="new">
     <mat-icon>add</mat-icon>
   </button>
-  <button mat-mini-fab class="header-icon" aria-label="Example icon-button with share icon">
+  <button mat-mini-fab class="header-icon" aria-label="Example icon-button with share icon" routerLink="logs">
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>

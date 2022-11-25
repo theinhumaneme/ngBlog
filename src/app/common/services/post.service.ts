@@ -21,7 +21,7 @@ export class PostService {
   // return this.posts.slice();
 
   getPost(index: number) {
-    return this.posts[index];
+    return this.posts.at(index);
   }
   addPost(post: Post) {
     this.posts.push(post);
@@ -41,12 +41,13 @@ export class PostService {
 
   // MANIPULATE COMMENTS
   getComment(postId: number, commentId: number) {
-    var post = this.posts[postId];
+    var post = this.posts.at(postId);
     var comment = post.comments[commentId];
+    console.log(comment);
     return comment;
   }
   addComment(postId: number, comment: Comment) {
-    var post = this.posts[postId];
+    var post = this.posts.at(postId);
     if (post.hasOwnProperty('comments')) {
       post.comments.push(comment);
     } else {
@@ -57,8 +58,8 @@ export class PostService {
     this.updatePost(postId, post);
   }
   updateComment(postId: number, commentId: number, comment: Comment) {
-    this.posts[postId].comments[commentId] = comment;
-    console.log(this.posts[postId]);
+    this.posts.at(postId).comments[commentId] = comment;
+    console.log(this.posts.at(postId));
     this.ls.addLog('update', 'comment');
     this.updatePost(postId, this.posts[postId]);
     this.postsChanged.next(this.posts.slice());

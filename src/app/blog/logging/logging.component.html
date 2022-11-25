@@ -1,29 +1,56 @@
-<table mat-table [dataSource]="logs">
-    <!-- Position Column -->
+<!-- <table mat-table [dataSource]="dataSource">
+
     <ng-container matColumnDef="user">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let logs"> {{logs.user}} </td>
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let logs"> {{logs.user}} </td>
     </ng-container>
-  
-    <!-- Name Column -->
+
+
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let logs"> {{logs.date}} </td>
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let logs"> {{logs.date}} </td>
     </ng-container>
-  
-    <!-- Weight Column -->
+
+
     <ng-container matColumnDef="operation">
-      <th mat-header-cell *matHeaderCellDef> operation </th>
-      <td mat-cell *matCellDef="let logs"> {{logs.operation}} </td>
+        <th mat-header-cell *matHeaderCellDef> operation </th>
+        <td mat-cell *matCellDef="let logs"> {{logs.operation}} </td>
     </ng-container>
-  
-    <!-- Symbol Column -->
+
+
     <ng-container matColumnDef="object">
-      <th mat-header-cell *matHeaderCellDef> object </th>
-      <td mat-cell *matCellDef="let logs"> {{logs.object}} </td>
+        <th mat-header-cell *matHeaderCellDef> object </th>
+        <td mat-cell *matCellDef="let logs"> {{logs.object}} </td>
     </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
+</table> -->
+
+
+
+<div class="logging">
+    <h1 style="text-align: center; padding-bottom:1rem;"> Logs </h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Date</th>
+            <th scope="col">Operation</th>
+            <th scope="col">Object</th>
+            <th scope="col">User</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs, let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{log.date | date:'MMM d, y, h:mm:ss a'}}</td>
+            <td>{{log.operation | uppercase}}</td>
+            <td>{{log.object | uppercase}}</td>
+            <td>{{log.user}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+</div>

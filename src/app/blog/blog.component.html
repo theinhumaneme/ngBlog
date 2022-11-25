@@ -9,6 +9,7 @@
         <mat-divider></mat-divider>
     </div>
     <div *ngIf="singlePost.hasOwnProperty('comments')">
-        <app-comment *ngFor="let com of singlePost.comments, let i=index" [comment]="com" [commentId]="i" [postId]="postId"></app-comment>
+        <app-comment *ngFor="let com of singlePost.comments, let i=index" [comment]="com" [commentId]="i"
+            [postId]="postId"></app-comment>
     </div>
 </div>

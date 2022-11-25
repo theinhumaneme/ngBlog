@@ -7,12 +7,14 @@ import {
   MatChipsModule,
   MatDividerModule,
   MatFormFieldModule,
+  MatGridListModule,
   MatIconModule,
   MatInputModule,
+  MatListModule,
   MatSlideToggleModule,
   MatToolbarModule,
 } from '@angular/material';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table'; // <-
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +40,7 @@ import { LoggingComponent } from './blog/logging/logging.component';
     BlogComponent,
     PostEditComponent,
     CommentEditComponent,
-    LoggingComponent
+    LoggingComponent,
   ],
   imports: [
     MatButtonModule,
@@ -50,7 +52,9 @@ import { LoggingComponent } from './blog/logging/logging.component';
     MatFormFieldModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatGridListModule,
     MatTableModule,
+    MatListModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -59,6 +63,6 @@ import { LoggingComponent } from './blog/logging/logging.component';
     ReactiveFormsModule,
   ],
   providers: [PostService, LoggingService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

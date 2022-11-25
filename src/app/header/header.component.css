@@ -1,12 +1,6 @@
-/* .header{
-    padding: auto 10%;
-} */
-/* .navbar{
-    background-color: white !important;
-} */
 .example-spacer {
-  flex:auto;
+  flex: auto;
 }
-.header-icon{
-    margin: 0.5rem;
+.header-icon {
+  margin: 0.5rem;
 }

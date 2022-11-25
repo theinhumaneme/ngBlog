@@ -1,21 +1,11 @@
-body{
-    margin: 12.5%;
-    padding: 12.5%;
+.footer {
+  background-color: black;
+  color: white;
+  width: 100%;
 }
-footer{
-    background-color: black;
-    color: white;
-    width: 100%;
-}
-.left-section,.middle-section,.right-section{
-    vertical-align: middle;
-    align-items: center;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-ul{
-    list-style: none;
-    text-align: center;
+h3 {
+  line-height: 0%;
+  margin-top: 1rem;
+  margin-bottom: 0%;
+  padding-bottom: 3rem;
 }

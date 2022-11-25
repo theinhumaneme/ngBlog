@@ -9,7 +9,6 @@ export class Log{
         this.operation = operation;
         this.object = object;
         this.date = new Date()
-
     }
 
 }
