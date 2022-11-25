@@ -1,2 +1,14 @@
-<app-post></app-post>
-<app-comment></app-comment>
+<div *ngIf="!view">
+    <app-post class="post" *ngFor="let post of posts, let i=index" [post]="post" [authorId]="post.authorId" [id]="i">
+    </app-post>
+</div>
+<div *ngIf="view">
+    <app-post [post]="singlePost" [id]="postId"></app-post>
+    <app-comment-edit *ngIf="singlePost.commentsEnabled" [postId]="postId"></app-comment-edit>
+    <div style="padding: 2rem;">
+        <mat-divider></mat-divider>
+    </div>
+    <div *ngIf="singlePost.hasOwnProperty('comments')">
+        <app-comment *ngFor="let com of singlePost.comments, let i=index" [comment]="com" [commentId]="i" [postId]="postId"></app-comment>
+    </div>
+</div>

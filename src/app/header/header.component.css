@@ -1,7 +1,12 @@
 /* .header{
     padding: auto 10%;
 } */
-
-.navbar{
+/* .navbar{
     background-color: white !important;
+} */
+.example-spacer {
+  flex:auto;
+}
+.header-icon{
+    margin: 0.5rem;
 }

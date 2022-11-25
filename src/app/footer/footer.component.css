@@ -1,6 +1,11 @@
+body{
+    margin: 12.5%;
+    padding: 12.5%;
+}
 footer{
     background-color: black;
     color: white;
+    width: 100%;
 }
 .left-section,.middle-section,.right-section{
     vertical-align: middle;

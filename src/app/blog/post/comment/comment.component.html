@@ -1,0 +1,16 @@
+<mat-card class="comment">
+    <mat-card-header>
+        <mat-card-title>Kalyan Mudumby</mat-card-title>
+        <img mat-card-avatar class="author-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj15jpLyrg59T5P7xd5VWrffH0a_uha_Y5BDWVeTnFHN2yjKeaKVUA98KnoHTcIfzrWbAwfUc-WRAKL5ivV44q8EKWeD3dT5hUcFp6mtYWgISKzJ5vbihHqF8OA59WwxkmV5C-m-ExwAwvkEngYZIUGlSW_V5lnUuYspaKg2GnNgETZFoblnc7078ZXVA/s3534/KalyanPortal.JPG">
+        <mat-card-subtitle>{{comment.dateCommented | date:'MMMM d, y'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="comment">{{comment.content}}</p>
+    </mat-card-content>
+    <mat-card-footer class="comment-footer">
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" routerLink="/edit/{{postId}}/{{commentId}}">Edit</button>
+            <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+        </mat-card-actions>
+    </mat-card-footer>
+</mat-card>

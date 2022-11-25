@@ -1,12 +1,20 @@
-import { Author } from "./author.model";
 import { Comment } from "./comment.model";
-import { Tag } from "./tag.model";
 
 export class Post{
-    author: Author;
-    comments: Comment[];
+    id: string;
+    authorId: string;
+    comments?: Comment[];
     title: string;
-    body: string;
-    datePosted: string;
-    tag: Tag[];
+    content: string;
+    datePosted: Date;
+    commentsEnabled: boolean;
+
+    constructor( title, content, enableComments){
+        this.authorId = "13456789",
+        this.title = title,
+        this.content = content,
+        this.comments = [],
+        this.datePosted = new Date(),
+        this.commentsEnabled = enableComments
+    }
 }

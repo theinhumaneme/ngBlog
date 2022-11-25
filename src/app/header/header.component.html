@@ -1,21 +1,19 @@
-<nav class="navbar navbar-expand-lg bg-light header">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Angular Blog</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tags</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">New Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Logging</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+  <span>Angular Blog</span>
+  <span class="example-spacer"></span>
+  <button mat-mini-fab color="primary" class="header-icon" aria-label="Save Posts" (click)="onSave()">
+    <mat-icon>save</mat-icon>
+  </button>
+  <button mat-mini-fab color="primary" class="header-icon" aria-label="Add new Post">
+    <mat-icon>label</mat-icon>
+  </button>
+  <button mat-mini-fab color="primary" class="header-icon" aria-label="Add new Post" routerLink="new">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-mini-fab class="header-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>

@@ -1,0 +1,17 @@
+<div class="commentForm">
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Content</mat-label>
+                <textarea rows="4" type="text" formControlName="content" id="content" matInput></textarea>
+            </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="primary" class="button" type="submit" [disabled]="!commentForm.valid">
+            Save
+        </button>
+        <button  mat-raised-button color="warn" class="button" type="reset" (click)="onCancel()">
+            Cancel
+        </button>
+    </form>
+</div>

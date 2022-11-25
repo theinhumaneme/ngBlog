@@ -1,24 +1,27 @@
-<div class="post-wrapper">
-    <div class="post-metadata row">
-        <div class="col-2 image">
-            <img src="../../../assets/static/images/profile.png" alt="" class="author-image">
-        </div>
-        <div class="row col-10 author-data">
-            <div class="col-2">
-                <div class="author-name">Mudumby Kalyan</div>
-            </div>
-            <div class="col-2">
-                <div class="posted-date">17-11-22</div>
-            </div>
-            <div class="col-1">
-                <div class="comments">3</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="post-body">
-        <h2 class="post-title">This is a example title</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque iusto aliquid odit dolores modi nam accusamus vitae adipisci quia repellat hic sed tempora necessitatibus minus quod, quidem facere totam odio.</p>
-    </div>
-
-</div>
+<mat-card class="post">
+    <mat-card-header>
+        <mat-card-title>Kalyan Mudumby</mat-card-title>
+        <img mat-card-avatar class="author-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj15jpLyrg59T5P7xd5VWrffH0a_uha_Y5BDWVeTnFHN2yjKeaKVUA98KnoHTcIfzrWbAwfUc-WRAKL5ivV44q8EKWeD3dT5hUcFp6mtYWgISKzJ5vbihHqF8OA59WwxkmV5C-m-ExwAwvkEngYZIUGlSW_V5lnUuYspaKg2GnNgETZFoblnc7078ZXVA/s3534/KalyanPortal.JPG">
+        <mat-card-subtitle>{{post.datePosted | date:'MMMM d, y'}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="post.hasOwnProperty('comments')" >{{post.comments.length}} Comments</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="!post.hasOwnProperty('comments')" >0 Comments</mat-card-subtitle>
+        <mat-card-subtitle>
+            <mat-chip-list>
+                <mat-chip>hello</mat-chip>
+                <mat-chip>hi</mat-chip>
+                <mat-chip>bye</mat-chip>
+                <mat-chip>lmao</mat-chip>
+            </mat-chip-list>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-title class="post-title" routerLink="/view/{{id}}/post" style="cursor: pointer;">{{post.title}}</mat-card-title>
+        <p>{{post.content}}</p>
+    </mat-card-content>
+    <mat-card-footer class="post-footer">
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" routerLink="/edit/{{id}}/post">Edit</button>
+            <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+        </mat-card-actions>
+    </mat-card-footer>
+</mat-card>

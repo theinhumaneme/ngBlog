@@ -1,0 +1,27 @@
+<div class="postForm">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Title</mat-label>
+                <input type="text" formControlName="title" id="title" matInput>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Content</mat-label>
+                <textarea rows="4" type="text" formControlName="content" id="content" matInput></textarea>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-slide-toggle  color="primary" class="button" formControlName="commentsEnabled"> Enable Comments</mat-slide-toggle>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="primary" class="button" type="submit" [disabled]="!postForm.valid">
+            Save
+        </button>
+        <button mat-raised-button color="warn" class="button" type="reset" (click)="onCancel()">
+            Cancel
+        </button>
+    </form>
+</div>
