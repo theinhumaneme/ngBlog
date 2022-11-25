@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Author } from 'src/app/common/models/author.model';
-import { Post } from 'src/app/common/models/post.model';
-import { dataStorageService } from 'src/app/common/services/data-storage.service';
-import { PostService } from 'src/app/common/services/post.service';
+import { Post } from '../../common/models/post.model';
+import { dataStorageService } from '../../common/services/data-storage.service';
+import { PostService } from '../../common/services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -14,7 +13,6 @@ export class PostComponent implements OnInit {
   @Input() post: Post;
   @Input() id: number;
   // postSubscription: Subscription;
-  author: Author;
   posts = [];
   view: boolean;
   constructor(
@@ -24,11 +22,10 @@ export class PostComponent implements OnInit {
     private dataService: dataStorageService
   ) {}
 
-  ngOnInit(): void {
-  }
-  onDelete(){
+  ngOnInit(): void {}
+  onDelete() {
     this.postService.deletePost(this.id);
-    this.router.navigate(['/blog'],{relativeTo: this.route})
-    this.dataService.storePosts()
+    this.router.navigate(['/blog'], { relativeTo: this.route });
+    this.dataService.storePosts();
   }
 }

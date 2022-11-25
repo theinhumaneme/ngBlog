@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Comment } from 'src/app/common/models/comment.model';
-import { dataStorageService } from 'src/app/common/services/data-storage.service';
-import { PostService } from 'src/app/common/services/post.service';
+import { Comment } from '../../../common/models/comment.model';
+import { dataStorageService } from '../../../common/services/data-storage.service';
+import { PostService } from '../../../common/services/post.service';
 
 @Component({
   selector: 'app-comment',

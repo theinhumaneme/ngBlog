@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Post } from 'src/app/common/models/post.model';
-import { dataStorageService } from 'src/app/common/services/data-storage.service';
-import { PostService } from 'src/app/common/services/post.service';
+import { Post } from '../../../common/models/post.model';
+import { dataStorageService } from '../../../common/services/data-storage.service';
+import { PostService } from '../../../common/services/post.service';
 
 @Component({
   selector: 'post-edit',
@@ -38,28 +38,34 @@ export class PostEditComponent implements OnInit {
       const post = this.postService.getPost(this.id);
       postTitle = post['title'];
       postContent = post['content'];
-      commentsEnabled = post['commentsEnabled']
+      commentsEnabled = post['commentsEnabled'];
     }
 
     this.postForm = new FormGroup({
-      'title': new FormControl(postTitle, Validators.required),
-      'content': new FormControl(postContent, Validators.required),
-      'commentsEnabled': new FormControl(commentsEnabled)
+      title: new FormControl(postTitle, Validators.required),
+      content: new FormControl(postContent, Validators.required),
+      commentsEnabled: new FormControl(commentsEnabled),
       // 'tag': new FormControl(tag, Validators.required)
     });
   }
   onSubmit() {
-    console.log(this.postForm.value)
+    console.log(this.postForm.value);
     if (this.editMode) {
-      var post = this.postService.getPost(this.id)
-      post.title = this.postForm.value['title']
-      post.content = this.postForm.value['content']
-      post.commentsEnabled = this.postForm.value['commentsEnabled']
+      var post = this.postService.getPost(this.id);
+      post.title = this.postForm.value['title'];
+      post.content = this.postForm.value['content'];
+      post.commentsEnabled = this.postForm.value['commentsEnabled'];
       this.postService.updatePost(this.id, post);
     } else {
-      this.postService.addPost(new Post(this.postForm.value['title'],this.postForm.value['content'], this.postForm.value['commentsEnabled']));
+      this.postService.addPost(
+        new Post(
+          this.postForm.value['title'],
+          this.postForm.value['content'],
+          this.postForm.value['commentsEnabled']
+        )
+      );
     }
-    this.ds.storePosts()
+    this.ds.storePosts();
     this.onCancel();
   }
   onCancel(): void {
